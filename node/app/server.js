@@ -11,7 +11,10 @@ const config = {
 
 const app = express();
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => {
+  console.log("Accessed");  
+  res.send('Hello World!')
+});
 
 app.post('/webhook', line.middleware(config), (req, res) => {
     console.log(req.body.events);
